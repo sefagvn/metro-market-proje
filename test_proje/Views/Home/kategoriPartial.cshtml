@@ -1,0 +1,42 @@
+﻿@model IEnumerable<test_proje.Models.kategori>
+
+@{ 
+    Layout = null;
+}
+
+    <h1 class="my-4">Kategoriler</h1>
+    @foreach(var item in Model)
+    {
+        <div class="list-group">
+            <a href="/Home/KategoriUrun/@item.kategoriId" class="list-group-item">@item.kategoriAdi</a>
+        </div>
+
+    }
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kategoriAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kategoriAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kategoriId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kategoriId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kategoriId })
+        </td>
+    </tr>
+}
+
+</table>*@

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<test_proje.Models.urunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid">
+    
+        <h2>Ürünler</h2>
+    
+    
+        <p>
+            @Html.ActionLink("Yeni Ürün", "Create")
+        </p>
+    
+    
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.kategori.kategoriAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.urunAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.icerik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.foto)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.kategori.kategoriAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.urunAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.icerik)
+                    </td>
+                    <td>
+                        <img width="75" src="@item.foto" />
+                        @*@Html.DisplayFor(modelItem => item.foto)*@
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.urunId }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.urunId }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.urunId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    
+</div>
