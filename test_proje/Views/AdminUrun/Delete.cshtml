@@ -1,0 +1,60 @@
+﻿@model test_proje.Models.urunler
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid">
+    
+
+    <h3>Silmeyi Onaylıyor musunuz?</h3>
+    <div>
+        <h4>ürünler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.kategori.kategoriAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.kategori.kategoriAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.urunAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.urunAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.foto)
+            </dt>
+
+            <dd>
+                <img src="@Model.foto" width="75" alt="Alternate Text" />
+                @*@Html.DisplayFor(model => model.foto)*@
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-default" /> |
+                @Html.ActionLink("Geri Dön", "Index")
+            </div>
+        }
+    </div>
+</div>

@@ -98,22 +98,38 @@ namespace test_proje.Controllers
                     uruns.urunAdi = urun.urunAdi;
                     uruns.icerik = urun.icerik;
                     uruns.kategoriId = urun.kategoriId;
-                    db.SaveChanges();
 
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    uruns.urunAdi = urun.urunAdi;
+                    uruns.icerik = urun.icerik;
+                    uruns.kategoriId = urun.kategoriId;
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
 
-                return RedirectToAction("Index");
+                //return View();
             }
             catch
             {
-                return View();
+                ViewBag.kategoriId = new SelectList(db.kategoris, "kategoriId", "kategoriAdi", urun.kategoriId);
+                return View(urun);
             }
         }
 
         // GET: AdminUrun/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var urun = db.urunlers.Where(u => u.urunId == id).SingleOrDefault();
+            if (urun == null)
+            {
+                return HttpNotFound();
+            }
+            return View(urun);
         }
 
         // POST: AdminUrun/Delete/5
@@ -123,6 +139,18 @@ namespace test_proje.Controllers
             try
             {
                 // TODO: Add delete logic here
+
+                var uruns = db.urunlers.Where(u => u.urunId == id).SingleOrDefault();
+                if (uruns == null)
+                {
+                    return HttpNotFound();
+                }
+                if (System.IO.File.Exists(Server.MapPath(uruns.foto)))
+                {
+                    System.IO.File.Delete(Server.MapPath(uruns.foto));
+                }
+                db.urunlers.Remove(uruns);
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
