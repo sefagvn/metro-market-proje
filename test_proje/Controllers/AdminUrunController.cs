@@ -65,16 +65,42 @@ namespace test_proje.Controllers
         // GET: AdminUrun/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var urun = db.urunlers.Where(u => u.urunId == id).SingleOrDefault();
+            if (urun == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.kategoriId = new SelectList(db.kategoris,"kategoriId","kategoriAdi",urun.kategoriId);
+            return View(urun);
         }
 
         // POST: AdminUrun/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, HttpPostedFileBase Foto, urunler urun)
         {
             try
             {
                 // TODO: Add update logic here
+                var uruns = db.urunlers.Where(u => u.urunId == id).SingleOrDefault();
+                if (Foto!=null)
+                {
+                    if (System.IO.File.Exists(Server.MapPath(uruns.foto)))
+                    {
+                        System.IO.File.Delete(Server.MapPath(uruns.foto));
+                    }
+                    WebImage img = new WebImage(Foto.InputStream);
+                    FileInfo fotoinfo = new FileInfo(Foto.FileName);
+
+                    string newfoto = Guid.NewGuid().ToString() + fotoinfo.Extension;
+                    img.Resize(700, 400);
+                    img.Save("~/Uploads/UrunFoto/" + newfoto);
+                    uruns.foto = "/Uploads/UrunFoto/" + newfoto;
+                    uruns.urunAdi = urun.urunAdi;
+                    uruns.icerik = urun.icerik;
+                    uruns.kategoriId = urun.kategoriId;
+                    db.SaveChanges();
+
+                }
 
                 return RedirectToAction("Index");
             }
