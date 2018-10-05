@@ -34,27 +34,45 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Home/kul_giris/">
-                            <i class="fas fa-sign-in-alt"></i> Giriş
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Home/kayit_ol/">
-                            <i class="far fa-user"></i> Üye Ol
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-user-tie"></i> Sefa Güven
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-sign-out-alt"></i> Çıkış
-                        </a>
-                    </li>
+
+
+                    @if (Session["uyeid"] != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Uye/Index">
+                                <i class="fas fa-user-tie"></i> @Session["kullaniciadi"].ToString()
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Uye/Logout/">
+                                <i class="fas fa-sign-out-alt"></i> Çıkış
+                            </a>
+                        </li>
+                        if (Convert.ToInt32(Session["yetkiid"]) == 1)
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Index/">
+                                 Admin Paneli
+                            </a>
+                        </li>
+
+                        }
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Uye/Login/">
+                                <i class="fas fa-sign-in-alt"></i> Giriş
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Uye/Create/">
+                                <i class="far fa-user"></i> Üye Ol
+                            </a>
+                        </li>
+                    }
+
+
                 </ul>
             </div>
         </div>

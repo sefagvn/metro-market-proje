@@ -16,6 +16,35 @@ namespace test_proje.Controllers
         {
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(uye uye)
+        {
+            var login = db.uyes.Where(u=>u.kullaniciAdi==uye.kullaniciAdi).SingleOrDefault();
+            if (login.kullaniciAdi==uye.kullaniciAdi && login.email==uye.email && login.sifre==uye.sifre)
+            {
+                Session["uyeid"] = login.uyeId;
+                Session["kullaniciadi"] = login.kullaniciAdi;
+                Session["yetkiid"] = login.yetkiId;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Uyari = "Kullanıcı Adı, Mail ya da Şifrenizi Kontrol Ediniz!!";
+                return View();
+            }
+            
+        }
+        public ActionResult Logout()
+        {
+            Session["uyeid"] = null;
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult create()
         {
             return View();
