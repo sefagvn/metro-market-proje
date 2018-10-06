@@ -1664,6 +1664,8 @@
     <Content Include="Views\Shared\_LayoutUye.cshtml" />
     <Content Include="Views\Uye\create.cshtml" />
     <Content Include="Views\Uye\Login.cshtml" />
+    <Content Include="Views\Uye\Index.cshtml" />
+    <Content Include="Views\Uye\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

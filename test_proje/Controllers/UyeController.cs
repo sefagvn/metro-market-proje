@@ -12,9 +12,14 @@ namespace test_proje.Controllers
         metroDB db = new metroDB();
 
         // GET: Uye
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            var uye = db.uyes.Where(u=>u.uyeId==id).SingleOrDefault();
+            if (Convert.ToInt32(Session["uyeid"])!=uye.uyeId)
+            {
+                return HttpNotFound();
+            }
+            return View(uye);
         }
         public ActionResult Login()
         {
@@ -69,6 +74,47 @@ namespace test_proje.Controllers
                 }
             }
             return View(uye);
+        }
+        public ActionResult Edit(int id)
+        {
+            var uye = db.uyes.Where(u=>u.uyeId == id).SingleOrDefault();
+            if (Convert.ToInt32(Session["uyeid"])!=uye.uyeId)
+            {
+                return HttpNotFound();
+            }
+            return View(uye);
+        }
+        [HttpPost]
+        public ActionResult Edit(uye uye, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                var uyee = db.uyes.Where(u => u.uyeId == id).SingleOrDefault();
+                if (uye!=null)
+                {
+                    uyee.kullaniciAdi = uye.kullaniciAdi;
+                    uyee.adi = uye.adi;
+                    uyee.soyadi = uye.soyadi;
+                    uyee.sifre = uye.sifre;
+                    uyee.email = uye.email;
+                    db.SaveChanges();
+                    Session["kullaniciadi"] = uye.kullaniciAdi;
+                    return RedirectToAction("Index", new { id=uyee.uyeId});
+
+                }
+                else
+                {
+                    uyee.kullaniciAdi = uye.kullaniciAdi;
+                    uyee.adi = uye.adi;
+                    uyee.soyadi = uye.soyadi;
+                    uyee.sifre = uye.sifre;
+                    uyee.email = uye.email;
+                    db.SaveChanges();
+                    Session["kullaniciadi"] = uye.kullaniciAdi;
+                    return RedirectToAction("Index", new { id = uyee.uyeId });
+                }
+            }
+            return View();
         }
     }
 }

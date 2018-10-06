@@ -39,7 +39,7 @@
                     @if (Session["uyeid"] != null)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href="/Uye/Index">
+                            <a class="nav-link" href="/Uye/Index/@Session["uyeid"]">
                                 <i class="fas fa-user-tie"></i> @Session["kullaniciadi"].ToString()
                             </a>
                         </li>
@@ -51,7 +51,7 @@
                         if (Convert.ToInt32(Session["yetkiid"]) == 1)
                         {
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/Index/">
+                            <a class="nav-link" target="_blank" href="/Admin/Index/">
                                  Admin Paneli
                             </a>
                         </li>
