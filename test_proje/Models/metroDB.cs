@@ -19,6 +19,9 @@ namespace test_proje.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<urunler>()
+                .Property(e => e.fiyat)
+                .HasPrecision(19, 4);
         }
     }
 }

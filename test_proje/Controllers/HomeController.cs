@@ -13,7 +13,8 @@ namespace test_proje.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var urun = db.urunlers.OrderByDescending(u=>u.urunId).ToList();
+            return View(urun);
         }
         public ActionResult kul_giris()
         {

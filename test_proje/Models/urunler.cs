@@ -22,6 +22,9 @@ namespace test_proje.Models
 
         public int? kategoriId { get; set; }
 
+        [Column(TypeName = "money")]
+        public decimal? fiyat { get; set; }
+
         public virtual kategori kategori { get; set; }
     }
 }
