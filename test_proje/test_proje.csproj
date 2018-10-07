@@ -1592,6 +1592,25 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Uploads\sliderResim\METRO_1.jpg" />
+    <Content Include="Uploads\sliderResim\METRO_2.jpg" />
+    <Content Include="Uploads\sliderResim\METRO_3.jpg" />
+    <Content Include="urunDetay\css\portfolio-item.css" />
+    <Content Include="urunDetay\gulpfile.js" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="urunDetay\vendor\jquery\jquery.js" />
+    <Content Include="urunDetay\vendor\jquery\jquery.min.js" />
+    <Content Include="urunDetay\vendor\jquery\jquery.slim.js" />
+    <Content Include="urunDetay\vendor\jquery\jquery.slim.min.js" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -1647,8 +1666,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\kul_giris.cshtml" />
-    <Content Include="Views\Home\kayit_ol.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\kategoriPartial.cshtml" />
@@ -1666,6 +1683,18 @@
     <Content Include="Views\Uye\Login.cshtml" />
     <Content Include="Views\Uye\Index.cshtml" />
     <Content Include="Views\Uye\Edit.cshtml" />
+    <Content Include="Views\Home\UrunDetay.cshtml" />
+    <Content Include="urunDetay\.travis.yml" />
+    <Content Include="urunDetay\package-lock.json" />
+    <Content Include="urunDetay\package.json" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="urunDetay\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="urunDetay\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="urunDetay\vendor\jquery\jquery.min.map" />
+    <Content Include="urunDetay\vendor\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

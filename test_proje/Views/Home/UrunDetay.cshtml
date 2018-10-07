@@ -1,0 +1,102 @@
+﻿@model test_proje.Models.urunler
+
+@{
+    ViewBag.Title = "UrunDetay";
+    Layout = "~/Views/Shared/_LayoutUye.cshtml";
+}
+
+<div class="container" style="margin-bottom:149px">
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">
+        @Model.kategori.kategoriAdi
+        <small>@Model.urunAdi</small>
+    </h1>
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-8">
+            <img class="img-fluid" style="width:500px !important;height:380px !important" src="@Model.foto">
+        </div>
+        <div class="col-md-4">
+            <h3 class="my-3">@Model.urunAdi</h3>
+            <p>@Model.icerik</p>
+            <h3 class="my-3"><button style="border-radius:10px;height:50px">Sepete Ekle<i class="fas fa-cart-plus"></i></button></h3>
+
+        </div>
+    </div>
+    <!-- /.row -->
+    @*<h3 class="my-4">Resimler</h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="@Model.foto" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="@Model.foto" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="@Model.foto" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="@Model.foto" alt="">
+            </a>
+        </div>
+    </div>*@
+  </div>
+    @*<h2>UrunDetay</h2>
+
+        <div>
+            <h4>urunler</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.kategori.kategoriAdi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.kategori.kategoriAdi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.urunAdi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.urunAdi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.icerik)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.icerik)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.foto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.foto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.fiyat)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fiyat)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.urunId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@

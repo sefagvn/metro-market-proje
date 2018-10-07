@@ -16,14 +16,16 @@ namespace test_proje.Controllers
             var urun = db.urunlers.OrderByDescending(u=>u.urunId).ToList();
             return View(urun);
         }
-        public ActionResult kul_giris()
+        public ActionResult UrunDetay(int id)
         {
-            return View();
+            var urun = db.urunlers.Where(u=>u.urunId == id).SingleOrDefault();
+            if (urun==null)
+            {
+                return HttpNotFound();
+            }
+            return View(urun);
         }
-        public ActionResult kayit_ol()
-        {
-            return View();
-        }
+       
         public ActionResult kategoriPartial()
         {
             return View(db.kategoris.ToList());
