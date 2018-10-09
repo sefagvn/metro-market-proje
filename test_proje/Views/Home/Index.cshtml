@@ -1,4 +1,6 @@
-﻿@model IEnumerable<test_proje.Models.urunler>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<test_proje.Models.urunler>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -53,6 +55,14 @@
                         </div>
                     </div>
                 }
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="pagedList">
+                            @Html.PagedListPager(Model,Page=>Url.Action("Index",new {Page}),PagedListRenderOptions.OnlyShowFivePagesAtATime)
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <!-- /.row -->
        
