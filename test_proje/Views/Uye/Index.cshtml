@@ -10,54 +10,65 @@
 <div>
     <h4>Profili</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="margin-bottom:285px">
         <dt>
-            @Html.DisplayNameFor(model => model.yetki.yetki1)
+            @*@Html.DisplayNameFor(model => model.yetki.yetki1)*@
+            <span>Yetkisi: </span>
+            <label style="font-weight:normal !important; padding-left:145px">
+                @Html.DisplayFor(model => model.yetki.yetki1)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.yetki.yetki1)
-        </dd>
+
 
         <dt>
-            @Html.DisplayNameFor(model => model.kullaniciAdi)
+            @*@Html.DisplayNameFor(model => model.kullaniciAdi)*@
+            <span>Kullanıcı Adı: </span>
+            <label style="font-weight:normal !important; padding-left:100px">
+                @Html.DisplayFor(model => model.kullaniciAdi)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kullaniciAdi)
-        </dd>
+       
 
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            @*@Html.DisplayNameFor(model => model.email)*@
+            <span>E-Mail: </span>
+            <label style="font-weight:normal !important; padding-left:145px">
+                @Html.DisplayFor(model => model.email)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
+        
 
         <dt>
-            @Html.DisplayNameFor(model => model.sifre)
+            @*@Html.DisplayNameFor(model => model.sifre)*@
+            <span>Şifre: </span>
+            <label style="font-weight:normal !important; padding-left:157px">
+                @Html.DisplayFor(model => model.sifre)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sifre)
-        </dd>
+       
 
         <dt>
-            @Html.DisplayNameFor(model => model.adi)
+            @*@Html.DisplayNameFor(model => model.adi)*@
+            <span>Adı: </span>
+            <label style="font-weight:normal !important; padding-left:168px">
+                @Html.DisplayFor(model => model.adi)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.adi)
-        </dd>
-
+        
         <dt>
-            @Html.DisplayNameFor(model => model.soyadi)
+            @*@Html.DisplayNameFor(model => model.soyadi)*@
+            <span>Soyadı: </span>
+            <label style="font-weight:normal !important; padding-left:142px">
+                @Html.DisplayFor(model => model.soyadi)
+            </label>
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.soyadi)
-        </dd>
+       
 
     </dl>
 </div>

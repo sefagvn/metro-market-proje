@@ -18,40 +18,45 @@
         @Html.HiddenFor(model => model.uyeId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.kullaniciAdi, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.kullaniciAdi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">Kullanıcı Adı</div>
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.kullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.kullaniciAdi, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">E-Mail</div>
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.sifre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.sifre, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">Şifre</div>
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.sifre, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.adi, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.adi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">Adı</div>
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.adi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.adi, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.soyadi, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.soyadi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">Soyadı</div>
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.soyadi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.soyadi, "", new { @class = "text-danger" })
             </div>
@@ -59,7 +64,7 @@
 
         
 
-        <div class="form-group">
+        <div class="form-group" style="margin-bottom:65px">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Güncelle" class="btn btn-default" />
             </div>
@@ -68,5 +73,5 @@
 }
 
 <div>
-    @Html.ActionLink("Geri Dön", "Index")
+    @Html.ActionLink("Geri Dön", "Index/", new { id=@Session["uyeid"] })
 </div>
