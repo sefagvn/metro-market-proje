@@ -13,7 +13,8 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.kategori.kategoriAdi)
+                @*@Html.DisplayNameFor(model => model.kategori.kategoriAdi)*@
+                <span>Kategorisi</span>
             </dt>
 
             <dd>
@@ -21,7 +22,8 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.urunAdi)
+                @*@Html.DisplayNameFor(model => model.urunAdi)*@
+                <span>Ürün Adı</span>
             </dt>
 
             <dd>
@@ -29,7 +31,8 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.icerik)
+                @*@Html.DisplayNameFor(model => model.icerik)*@
+                <span>İçerik</span>
             </dt>
 
             <dd>
@@ -37,11 +40,12 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.foto)
+                @*@Html.DisplayNameFor(model => model.foto)*@
+                <span>Ürün Fotoğrafı</span>
             </dt>
 
             <dd>
-                <img src="@Model.foto" width="75" alt="Alternate Text" />
+                <img src="@Model.foto" width="75" height="75" alt="Alternate Text" />
                 @*@Html.DisplayFor(model => model.foto)*@
             </dd>
 

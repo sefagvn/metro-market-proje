@@ -17,16 +17,20 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.kategori.kategoriAdi)
+                    @*@Html.DisplayNameFor(model => model.kategori.kategoriAdi)*@
+                    <span>Kategorisi</span>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.urunAdi)
+                    @*@Html.DisplayNameFor(model => model.urunAdi)*@
+                    <span>Ürün Adı</span>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.icerik)
+                    @*@Html.DisplayNameFor(model => model.icerik)*@
+                    <span>İçerik</span>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.foto)
+                    @*@Html.DisplayNameFor(model => model.foto)*@
+                    <span>Ürün Fotoğrafı</span>
                 </th>
                 <th></th>
             </tr>
@@ -44,12 +48,12 @@
                         @Html.DisplayFor(modelItem => item.icerik)
                     </td>
                     <td>
-                        <img width="75" src="@item.foto" />
+                        <img width="75" height="75" src="@item.foto" />
                         @*@Html.DisplayFor(modelItem => item.foto)*@
                     </td>
                     <td>
                         @Html.ActionLink("Düzenle", "Edit", new { id = item.urunId }) |
-                        @Html.ActionLink("Detay", "Details", new { id = item.urunId }) |
+                        @*@Html.ActionLink("Detay", "Details", new { id = item.urunId }) |*@
                         @Html.ActionLink("Sil", "Delete", new { id = item.urunId })
                     </td>
                 </tr>

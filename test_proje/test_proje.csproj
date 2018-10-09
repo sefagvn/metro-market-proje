@@ -1639,6 +1639,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminKategoriController.cs" />
     <Compile Include="Controllers\AdminUrunController.cs" />
+    <Compile Include="Controllers\AdminUyeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UyeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1703,6 +1704,11 @@
     <Content Include="urunDetay\vendor\jquery\jquery.min.map" />
     <Content Include="urunDetay\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Home\KategoriUrun.cshtml" />
+    <Content Include="Views\AdminUye\Create.cshtml" />
+    <Content Include="Views\AdminUye\Delete.cshtml" />
+    <Content Include="Views\AdminUye\Details.cshtml" />
+    <Content Include="Views\AdminUye\Edit.cshtml" />
+    <Content Include="Views\AdminUye\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

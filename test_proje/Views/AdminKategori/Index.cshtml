@@ -13,7 +13,8 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.kategoriAdi)
+                @*@Html.DisplayNameFor(model => model.kategoriAdi)*@
+                <span>Kategori Adı</span>
             </th>
             <th></th>
         </tr>
@@ -26,7 +27,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Düzenle", "Edit", new { id = item.kategoriId }) |
-                    @Html.ActionLink("Detay", "Details", new { id = item.kategoriId }) |
+                    @*@Html.ActionLink("Detay", "Details", new { id = item.kategoriId }) |*@
                     @Html.ActionLink("Sil", "Delete", new { id = item.kategoriId })
                 </td>
             </tr>
