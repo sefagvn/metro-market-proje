@@ -4,11 +4,11 @@
     Layout = null;
 }
 
-    <h1 class="my-4">Kategoriler</h1>
+    <h2 class="my-4">Kategoriler</h2>
     @foreach(var item in Model)
     {
-        <div class="list-group">
-            <a href="/Home/KategoriUrun/@item.kategoriId" class="list-group-item">@item.kategoriAdi</a>
+        <div class="list-group" style="margin-bottom:5px">
+            <a href="/Home/KategoriUrun/@item.kategoriId" class="list-group-item" style="color: #f8f9fa;border-radius: 10px;background-color: #343a40;">@item.kategoriAdi</a>
         </div>
 
     }

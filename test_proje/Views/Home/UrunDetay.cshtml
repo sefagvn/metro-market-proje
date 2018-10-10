@@ -19,7 +19,7 @@
         <div class="col-md-4">
             <h3 class="my-3">@Model.urunAdi</h3>
             <p>@Model.icerik</p>
-            <h3 class="my-3"><button style="border-radius:10px;height:50px">Sepete Ekle<i class="fas fa-cart-plus"></i></button></h3>
+            <h3 class="my-3"><i class="fas fa-cart-plus"></i><a href="@Url.Action("AddSepet","Home",new { id=Model.urunId})"style="border-radius:10px;height:50px;color:black">Sepete Ekle</a></h3>
 
         </div>
     </div>

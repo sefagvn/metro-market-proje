@@ -16,6 +16,7 @@ namespace test_proje.Controllers
         public ActionResult Index(int page=1)
         {
             var urun = db.urunlers.OrderByDescending(u=>u.urunId).ToPagedList(page,6);
+
             return View(urun);
         }
         public ActionResult KategoriUrun(int id)
@@ -37,5 +38,6 @@ namespace test_proje.Controllers
         {
             return View(db.kategoris.ToList());
         }
+        
     }
 }
